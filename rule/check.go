@@ -101,7 +101,7 @@ func (c *httpChecker) Check(fwdr *Forwarder) (time.Duration, error) {
 	}
 
 	if _, err = io.WriteString(rc,
-		"GET "+c.uri+" HTTP/1.1\r\nHost:"+c.serverName+"\r\n\r\n"); err != nil {
+		"GET "+c.uri+" HTTP/1.1\r\nHost:"+c.serverName+"\r\nUser-Agent: a\r\n\r\n"); err != nil {
 		return 0, err
 	}
 
